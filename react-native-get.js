@@ -4,7 +4,7 @@ fetch('http://graphql.ddns.net/v1alpha1/graphql', {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
     },
-    body: JSON.stringify({query: 'mutation{ insert_user (objects: { firstname: "Buillet", lastname: "Aurélie", password: "Password", nickname: "Lily"}){affected_rows}}'})
+    body: JSON.stringify({query: '{user{lastname firstname nickname id password}}'})
 })
     .then(r => r.json())
     .then(data => console.log('data returned:', data));
